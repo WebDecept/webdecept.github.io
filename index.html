@@ -5,42 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</title>
   <style>
+    :root {
+      --text: #111827;
+      --muted: #4b5563;
+      --bg: #ffffff;
+      --accent: #1f2937;
+      --border: #e5e7eb;
+      --link: #1d4ed8;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      color: #111827;
+      background: var(--bg);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
     }
 
     .wrap {
       max-width: 900px;
-      padding: 32px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+
+    header {
       text-align: center;
+      margin-bottom: 48px;
     }
 
     h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
+      margin: 0 0 24px;
+      font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+      line-height: 1.25;
       font-weight: 700;
     }
 
     .authors {
       font-size: 1.1rem;
-      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    section {
+      margin-top: 40px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 0 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 64px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</h1>
-    <div class="authors">
-      Zijing Shi, Meng Fang, Ling Chen
-    </div>
+    <header>
+      <h1>Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</h1>
+      <div class="authors">Zijing Shi, Meng Fang, Ling Chen</div>
+      <div class="links">
+        <a class="btn" href="https://github.com/WebDecept/WebDecept" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.21 0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+          Code
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project studies the safety of web agents when they encounter deceptive
+        user interfaces commonly seen in e-commerce websites. 
+      </p>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <p>
+        The project code is available on GitHub at
+        <a href="https://github.com/WebDecept/WebDecept" target="_blank" rel="noopener">
+          github.com/WebDecept/WebDecept</a>.
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2026 WebDecept. All rights reserved.
+    </footer>
   </div>
 </body>
 </html>
