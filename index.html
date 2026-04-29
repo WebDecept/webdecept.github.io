@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</title>
+  <title>WebDecept: Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</title>
+  <meta name="description" content="WebDecept: a lightweight, configurable plugin framework for benchmarking web agent safety under realistic e-commerce deceptive interfaces." />
   <style>
     :root {
       --text: #111827;
@@ -12,6 +13,7 @@
       --accent: #1f2937;
       --border: #e5e7eb;
       --link: #1d4ed8;
+      --soft: #f9fafb;
     }
 
     * { box-sizing: border-box; }
@@ -22,29 +24,35 @@
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .wrap {
-      max-width: 900px;
+      max-width: 880px;
       margin: 0 auto;
       padding: 64px 32px 80px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
     h1 {
-      margin: 0 0 24px;
-      font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+      margin: 0 0 20px;
+      font-size: clamp(1.6rem, 3.4vw, 2.5rem);
       line-height: 1.25;
       font-weight: 700;
     }
 
     .authors {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .affil {
+      font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 24px;
     }
@@ -54,7 +62,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .btn {
@@ -82,28 +90,28 @@
       fill: currentColor;
     }
 
-    section {
-      margin-top: 40px;
-    }
+    section { margin-top: 36px; }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin: 0 0 12px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
 
     p {
-      color: var(--muted);
+      color: var(--text);
       margin: 0 0 12px;
     }
 
-    code {
-      background: #f3f4f6;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.92em;
+    .muted { color: var(--muted); }
+
+    ul {
+      margin: 8px 0 12px;
+      padding-left: 22px;
     }
+
+    li { margin-bottom: 6px; }
 
     a {
       color: var(--link);
@@ -112,8 +120,20 @@
 
     a:hover { text-decoration: underline; }
 
+    pre {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+
     footer {
-      margin-top: 64px;
+      margin-top: 56px;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
@@ -124,8 +144,18 @@
   <div class="wrap">
     <header>
       <h1>Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces</h1>
-      <div class="authors">Zijing Shi, Meng Fang, Ling Chen</div>
+      <div class="authors">Zijing Shi<sup>1</sup>, Meng Fang<sup>2</sup>, Ling Chen<sup>1</sup></div>
+      <div class="affil">
+        <sup>1</sup>AAII, University of Technology Sydney &nbsp;·&nbsp;
+        <sup>2</sup>University of Liverpool
+      </div>
       <div class="links">
+        <a class="btn" href="paper.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.41L17.59 8H14V4.41zM8 13h8v2H8v-2zm0 4h8v2H8v-2zm0-8h5v2H8V9z"/>
+          </svg>
+          Paper (PDF)
+        </a>
         <a class="btn" href="https://github.com/WebDecept/WebDecept" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.21 0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
@@ -136,24 +166,71 @@
     </header>
 
     <section>
-      <h2>Overview</h2>
+      <h2>TL;DR</h2>
       <p>
-        This project studies the safety of web agents when they encounter deceptive
-        user interfaces commonly seen in e-commerce websites. 
+        We study how multimodal web agents behave when websites use deceptive
+        interface patterns — the kinds of "dark patterns" widely seen in
+        e-commerce. We release <strong>WebDecept</strong>, a lightweight, configurable
+        plugin framework that injects controlled deceptive patterns into a
+        reproducible shopping environment, and use it to measure agent safety
+        end-to-end across product discovery, cart, and checkout.
       </p>
     </section>
 
     <section>
-      <h2>Code</h2>
+      <h2>Abstract</h2>
       <p>
-        The project code is available on GitHub at
-        <a href="https://github.com/WebDecept/WebDecept" target="_blank" rel="noopener">
-          github.com/WebDecept/WebDecept</a>.
+        As autonomous web agents are increasingly deployed for real-world tasks,
+        ensuring their safety has become a critical concern. We study web agent
+        behavior under realistic deceptive interfaces in the e-commerce domain
+        and introduce <strong>WebDecept</strong>, a lightweight, configurable
+        plugin framework that enables controlled injection of deceptive interface
+        patterns into existing web environments. Using WebDecept, we instantiate
+        seven deceptive patterns commonly seen on the open web — including
+        targeted advertisements, domain redirection, and shopping manipulation —
+        and inject them into the frontend during task execution to perform
+        controlled evaluation of multiple multimodal web agents. Our results show
+        that current web agents are highly susceptible to multiple classes of
+        deceptive interfaces, and that prompt-based safety constraints are often
+        insufficient to mitigate these failures. We further analyze how the
+        design choices of deceptive patterns influence the success of such
+        manipulations, highlighting safety challenges that should be addressed as
+        web agents are scaled toward real-world deployment.
       </p>
     </section>
 
+    <section>
+      <h2>Deceptive Patterns</h2>
+      <p>WebDecept instantiates seven configurable deceptive patterns, grouped into three families:</p>
+      <ul>
+        <li><strong>Misleading UI elements</strong> — pop-up message, banner message, and their personalized (LLM-generated, goal-conditioned) variants.</li>
+        <li><strong>Domain redirection</strong> — silently rewrites the hyperlink behind the agent's next optimal action, exposed only via the accessibility tree.</li>
+        <li><strong>Shopping manipulations</strong> — <em>cart add-ons</em> (items stealthily added at checkout) and <em>price drift</em> (subtle gaps between itemized and total prices).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code &amp; Resources</h2>
+      <p>
+        Code is on GitHub:
+        <a href="https://github.com/WebDecept/WebDecept" target="_blank" rel="noopener">github.com/WebDecept/WebDecept</a>.
+        The framework is built on top of the shopping environment of VisualWebArena
+        (OneStopShop) and can be readily integrated into other web benchmarks.
+      </p>
+    </section>
+
+    <section>
+      <h2>Citation</h2>
+<pre><code>@inproceedings{shi2026webdecept,
+  title     = {Benchmarking Web Agent Safety under E-commerce Deceptive Interfaces},
+  author    = {Shi, Zijing and Fang, Meng and Chen, Ling},
+  booktitle = {Proceedings of ACL},
+  year      = {2026}
+}</code></pre>
+    </section>
+
     <footer>
-      &copy; 2026 WebDecept. All rights reserved.
+      Contact: <a href="mailto:Zijing.Shi-1@uts.edu.au">Zijing.Shi-1@uts.edu.au</a>
     </footer>
   </div>
 </body>
